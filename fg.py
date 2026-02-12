@@ -1,16 +1,28 @@
 #1
-with open ("data.txt", "w") as h:
-    h.write("hello\n")
-    h.write("world\n")
+import csv
+with open ("data.txt", "r") as h:
+    lines = [line.strip() for line in h]
+with open ("data.csv","w",newline="") as w:
+    writer = csv.writer(w)
+    writer.writerows([""])
+    for line in lines:
+        writer.writerow([line])
 #2
-with open ("file.txt", "w") as h:
-    for i in range (1,11):
-        h.write(str(i) + "\n")
+import csv
+with open ("file.txt", "r") as h:
+    lines = [line.strip() for line in h]
+    with open("file.csv", "w", newline="") as w:
+        writer = csv.writer(w)
+        writer.writerows([""])
+        for line in lines:
+            writer.writerow([line])
 
 #3
-with open ("name.txt", "w") as h:
-    name = input()
-
-    for n in name.split():
-        h.write(n.title() + "\n")
-print("saved")
+import csv
+with open ("name.txt", "r") as h:
+    lines = [line.strip() for line in h]
+    with open("name.csv", "w", newline="") as w:
+        writer = csv.writer(w)
+        writer.writerows([""])
+        for line in lines:
+            writer.writerow([line])
